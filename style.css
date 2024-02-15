@@ -1,0 +1,353 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin : 0;
+    padding :0;
+    box-sizing: border-box;
+}
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  nav{
+    width:100%;
+    position: sticky !important;
+    left:0;
+    top:0;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0,.5);
+    z-index:10;
+  }
+.navbar-brand{
+    font-weight: 600;
+}
+.nav-link{
+    color:white !important;
+    border-bottom: 1px solid transparent;
+}
+.nav-link:hover{
+    border-bottom: 1px solid white;
+}
+section{
+    width :100%;
+    min-height : 100vh;
+
+}
+
+/* Home Section */
+#home{
+    width: 100%;
+    height :100hv;
+    background: black;
+    background-size: cover;
+    background-position: center;
+    display: flex; 
+    align-items: center;
+    color:white;
+    flex-direction: column;
+}
+#home p{
+    position:absolute;
+    top:50%;
+    font-size: 100px;
+    opacity:0;
+    animation: text 1s linear infinite;
+}
+#home p:nth-child(1){
+    animation-delay: 0s;
+}
+#home p:nth-child(2){
+    animation-delay: 2s;
+}
+#home p:nth-child(3){
+    animation-delay: 4s;
+}
+#home p:nth-child(4){
+    animation-delay: 6s;
+}
+
+@keyframes text{
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+#home span {
+    color: yellow;
+}
+@media screen and (max-width:576px){
+        #home p{
+            font-size: 80px;
+        }
+}
+
+/* About Section */
+
+#about{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background: skyblue ;
+
+}
+.circle{
+    width:400px;
+    height:400px;
+    background: grey;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0,.7);
+    margin-bottom: 3%;
+    margin-top: 8%;
+    transition: 1s;
+}
+.circle img{
+    position: absolute;
+    height:350px;
+    top: -20%;
+    left:6%;
+    filter: drop-shadow(0px 30px 15px rgba(0,0,0,.4));
+    border-radius: 50%;
+}
+.circle:hover{
+    width:700px;
+    height:400px;
+    border-radius:10px;
+    transition: 1s;
+}
+
+.circle:hover img{
+    position:absolute;
+    top:0%;
+    left:0%;
+    transition: 1s;
+}
+.circle:hover .content{
+    position:absolute;
+    top:15%;
+    right:0%;
+    color:white;
+    width:50%;
+    opacity: 1;
+    transition: 1;
+}
+.circle .content{
+    opacity:0;
+}
+
+@media screen  and (max-width:576px){
+    .circle{
+        width:400px;
+        height:400px;
+        background: grey;
+        border-radius: 50%;
+        position: relative;
+        box-shadow: 0px 5px 12px rgba(0, 0, 0,.7);
+        margin-bottom: 3%;
+        margin-top: 8%;
+        transition: 1s;
+    }
+    .circle:hover img{
+        position:absolute;
+        top:0%;
+        left:8%;
+        transition: 1s;
+    }
+    .circle:hover{
+        width:400px;
+        height:600px;
+        border-radius:10px;
+        transition: 1s;
+    }
+    .circle:hover .content{
+        position:absolute;
+        top:60%;
+        right:0%;
+        color:white;
+        width:50%;
+        opacity: 1;
+        transition: 1;
+        padding: 15px;
+    }
+    
+}
+
+/* Skill Section */
+
+#skills{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+
+.container1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.container1 .progress1{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    color: #fff;
+    background: #444 linear-gradient(to right,transparent 50%,var(--clr)0);
+}
+.container1 .progress1 h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2.5em;
+    z-index: 1;
+    font-weight: 500;
+}
+.container1 .progress1 span{
+    font-size: 0.65em;
+    font-weight: 400;
+}
+.container1 .progress1 h4{
+    position: absolute;
+    top:62%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    font-weight: 500;
+    color: var(--clr);
+    text-transform: uppercase;
+}
+.container1 .progress1::before{
+    content:'';
+    display: block;
+    height: 100%;
+    margin-left: 50%;
+    transform-origin: left;
+    border-radius: 0 100% 100% 0/50%;
+}
+
+.container1 .progress1::after{
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 50%;
+    background: #222;
+}
+.container1 .progress1::before{
+    background: var(--clr);
+    transform: rotate(calc(((var(--i) - 0) * 0.01turn)));
+}
+
+.container1 .progress1.less::before{
+    background: #444;
+    transform: rotate(calc(((var(--i) - 0) * 0.01turn)));
+}
+/* Project Section */
+
+#projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3%;
+    padding-bottom: 2%;
+    background: skyblue;
+}
+.carousel{
+
+    width:50%;
+    height: 80hv;
+    margin-left:auto;
+    margin-right: auto;
+    box-shadow: 10px 20px 10px rgba(0,0,0,.4);
+}
+.img{
+    margin-left:auto;
+    margin-right: auto;
+   
+    width: 100%;
+    height:80hv;
+
+}
+.h{
+    margin-right: 20px;
+}
+.project{
+    margin-left: 50px;
+}
+
+
+@media screen and (max-width:576px){
+    .carousel{
+        display: block;
+        width:90%;
+        height: 50hv;
+        margin-left:auto;
+        margin-right: auto;
+        box-shadow: 10px 20px 10px rgba(0,0,0,.4);
+    }
+    .img{
+        margin-left:auto;
+        margin-right: auto;
+       
+    }
+}
+
+/* Contact section*/
+
+#contact{
+    padding-top: 7%;
+    background-color: black;
+}
+a:link{
+    text-decoration: none;
+}
+#contact svg{
+    display: inline;
+
+    padding-left: 1%;
+    padding-right: 3%;
+    margin-left: 37px;
+    background: #c3cad1;
+    margin-right:10px ;
+    border-radius: 40px;
+    transition: 0.5s;
+}
+#contact svg:hover{
+    box-shadow:1px 1px 10px skyblue;
+}
+#contact h3{
+    padding-left: 1%;
+    padding-right: 3%;
+    padding-bottom: 1%;
+    margin-left: 100px;
+    margin-right:7px ;
+    animation: text 2s linear infinite;
+}
+
+@keyframes text{
+    0%{ 
+        opacity: 0; 
+      } 
+      50%{ 
+        opacity: 0.7; 
+      } 
+      100%{ 
+        opacity: 0; 
+      }
+}
+.col-lg-7{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+#footer .nav-link{
+    padding-right: 5px;
+    margin-right: 2px;
+    margin-left: 20%;
+}
